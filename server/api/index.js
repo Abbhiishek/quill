@@ -9,17 +9,22 @@ const apiKey = process.env.API_KEY
 const anthropic = new Anthropic({ apiKey });
 const app = express()
 
+const allowedOrigins = ["https://aiquill.vercel.app"];
 
-app.use(cors())
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept , Authorization",
-    );
-    next();
-});
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+  },
+  methods: 'GET,POST,PUT,DELETE,HEAD,PATCH',
+  allowedHeaders: '',
+  credentials: true,
+  maxAge: 3600
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
