@@ -5,14 +5,20 @@ require('dotenv').config()
 
 const app = express();
 const port = process.env.PORT || 3000;
-const corsOptions = {
-  origin: 'https://aiquill.vercel.app',
-  credentials: true,
-};
-app.use(cors(corsOptions));
-app.options('*', cors());
 app.use(express.json());
-
+const app = express()
+app.use(cors({
+    origin: "*"
+}))
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept , Authorization",
+    );
+    next();
+});
 const apiKey = process.env.API_KEY
 const anthropic = new Anthropic({ apiKey });
 
