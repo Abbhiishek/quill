@@ -7,7 +7,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 const apiKey = process.env.API_KEY
 const anthropic = new Anthropic({ apiKey });
-const app = express()
 
 const allowedOrigins = ["https://aiquill.vercel.app"];
 
