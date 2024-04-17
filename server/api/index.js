@@ -23,7 +23,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(express.json());
-
+app.use(express.urlencoded());
 
 app.get("/", async (req, res) => {
   res.status(200).json({ status: 'up and running!' });
