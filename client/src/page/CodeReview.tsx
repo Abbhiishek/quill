@@ -7,7 +7,6 @@ import OptimizationSection from '../components/app/OptimizationSection';
 import SuggestionSection from '../components/app/SuggestionSection';
 import CorrectCode from '../components/app/CorrectCode';
 import ReportCard from '../components/app/ReportCard';
-import { Navbar } from '../components/navbar';
 
 
 
