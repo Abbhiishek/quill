@@ -20,7 +20,7 @@ function CodeReview() {
     optimization: [],
     suggestions: [],
     correctcode: [],
-    marksoutof10: null,
+    marksoutof100: null,
   });
   const [loading, setLoading] = useState(false);
 
@@ -74,7 +74,7 @@ function CodeReview() {
             </button>
           </form>
           <div className='flex flex-row justify-center items-start gap-10'>
-            {response.marksoutof10 && <ReportCard marks={response.marksoutof10 as number} />}
+            {response.marksoutof100 && <ReportCard marks={response.marksoutof100 as number} />}
             <div className='justify-items-start'>
               {response.errors?.length > 0 && <ErrorSection errors={response.errors as string[]} />}
               {response.bugs?.length > 0 && <BugSection bugs={response.bugs as string[]} />}
