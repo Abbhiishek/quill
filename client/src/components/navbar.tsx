@@ -11,12 +11,12 @@ export const Navbar = () => {
                 <div className="text-black font-bold hover:italic text-3xl font-space">Quill</div>
             </div>
             <div className='flex justify-end gap-4 items-center'>
-                <a href="/explain" target="_blank">
+                <a href="/explain" >
                     <button className="bg-green-500  rounded-lg pt-3 pb-3 pr-8 pl-8">
                         Code Explain
                     </button>
                 </a>
-                <a href="/review" target="_blank">
+                <a href="/review" >
                     <button className="bg-green-500  rounded-lg pt-3 pb-3 pr-8 pl-8">
                         Code Review
                     </button>
