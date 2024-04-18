@@ -8,7 +8,10 @@ import SuggestionSection from '../components/app/SuggestionSection';
 import CorrectCode from '../components/app/CorrectCode';
 import ReportCard from '../components/app/ReportCard';
 import { Navbar } from '../components/navbar';
-function App() {
+
+
+
+function CodeReview() {
 
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState({
@@ -22,7 +25,7 @@ function App() {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     const prompts = `
@@ -32,8 +35,12 @@ function App() {
     
     `;
     try {
+
+
+      // const response = await GenerateMessage(prompt)
+      // console.log("response from direct client call ->", response)
       await axios
-        .post('http://localhost:5000/send-prompt', { prompt: prompts })
+        .post('http://localhost:3000/send-prompt', { prompt: prompts })
         .then((response) => {
           const responseJson = JSON.parse(response.data.response) || response;
           console.log(responseJson);
@@ -47,8 +54,7 @@ function App() {
   };
 
   return (
-<>
-      <Navbar />
+    <>
       <div className='bg-purple-600/10'>
         <div className='dark:bg-dot-thick-neutral-800 min-h-screen flex flex-col justify-center items-center'>
           <form className='flex flex-col text-center  items-center pt-10'>
@@ -85,4 +91,4 @@ function App() {
   );
 }
 
-export default App;
+export default CodeReview;
