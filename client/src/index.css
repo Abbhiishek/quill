@@ -8,7 +8,7 @@
 }
 
 .landing-page { 
-    background-image: url('bgqui.gif');
+    background-image: url('/bgqui.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: luminosity;
