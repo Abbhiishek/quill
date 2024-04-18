@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom'
 
 function NotFound() {
     return (
-        <div className='grid place-content-center h-screen bg-dot-thick-red-800'>
-            <h2>Landed Somewhere Unkown!</h2>
-            <p>
-                <Link to="/">Go to the home page</Link>
+        <div className='grid place-content-center h-screen gap-5 bg-dot-thick-red-800 blur-2xl'>
+            <img src="https://illustrations.popsy.co/emerald/crashed-error.svg"
+                width={"400px"}
+                alt="" />
+            <h2 className='text-3xl font-bold text-center'>Landed Somewhere Unkown!</h2>
+            <p className='text-center'>
+                <Link className='text-red-800 text-center ' to="/">Go to the home page</Link>
             </p>
             <div className='flex flex-row gap-10 justify-center items-center'>
                 <a href="/explain" >
