@@ -4,6 +4,7 @@ import LandingPage from "./page/LandingPage";
 import CodeExplain from "./page/CodeExplain";
 import CodeReview from "./page/CodeReview";
 import NotFound from "./page/NotFound";
+import SignInPage from "./page/sign-in";
 
 
 
@@ -23,6 +24,7 @@ function App() {
                 <Route index element={<LandingPage />} />
                 <Route path="review" element={<CodeReview />} />
                 <Route path="explain" element={<CodeExplain />} />
+                <Route path="signin" element={<SignInPage />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
