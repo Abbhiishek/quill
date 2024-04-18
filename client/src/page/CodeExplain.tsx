@@ -22,7 +22,7 @@ function CodeExplain() {
             ${prompt}
             `;
             await axios
-                .post('http://localhost:3000/send-prompt', { prompt: prompts })
+                .post('https://quill-server.vercel.app/send-prompt', { prompt: prompts })
                 .then((response) => {
                     setResponse(response.data.response);
                     setLoading(false);

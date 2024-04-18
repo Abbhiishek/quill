@@ -39,7 +39,7 @@ function CodeReview() {
       // const response = await GenerateMessage(prompt)
       // console.log("response from direct client call ->", response)
       await axios
-        .post('http://localhost:3000/send-prompt', { prompt: prompts })
+        .post('https://quill-server.vercel.app/send-prompt', { prompt: prompts })
         .then((response) => {
           const responseJson = JSON.parse(response.data.response) || response;
           console.log(responseJson);
