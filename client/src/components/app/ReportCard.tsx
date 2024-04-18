@@ -9,7 +9,7 @@ function ReportCard({ marks }: { marks: number }) {
                 currentValueText={`⌛`}
             />
 
-            <h3 className="text-emerald-600">{marks}/10</h3>
+            <h3 className="text-emerald-600">{marks}/100</h3>
         </div>
     )
 }
